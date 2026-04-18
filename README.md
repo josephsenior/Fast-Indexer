@@ -1,4 +1,4 @@
-# Fast-Indexer (cix) — Fast trigram-based code indexer
+# Fast-Indexer (cix) — Blazing Fast trigram-based code indexer
 
 Fast-Indexer is a Rust-based, trigram-driven incremental indexer and searcher for local codebases. Build an on-disk index once, then run sub-millisecond substring queries over file paths using memory-mapped Roaring bitmaps ([Roaring](https://github.com/RoaringBitmap/roaring-rs)).
 
