@@ -1,0 +1,56 @@
+[package]
+name = "cix"
+version = "0.1.0"
+edition = "2021"
+description = "Fast-Indexer — Rust trigram-based incremental indexer for sub-millisecond substring search in codebases"
+readme = "README.md"
+license = "MIT"
+keywords = ["search", "cli", "index", "trigram", "codebase"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "cix"
+path = "src/main.rs"
+
+[dependencies]
+# Async runtime — uses io_uring on Linux, kqueue on macOS, IOCP on Windows
+tokio       = { version = "1",    features = ["full"] }
+
+# Ripgrep's own gitignore-aware directory walker
+ignore      = "0.4"
+
+# CPU parallelism for trigram extraction
+rayon       = "1.8"
+
+# Compressed posting lists — AND/OR in CPU bitwise instructions
+roaring     = "0.10"
+
+# Zero-copy memory-mapped file I/O
+memmap2     = "0.9"
+
+# CLI argument parsing
+clap        = { version = "4", features = ["derive"] }
+
+# Cross-platform filesystem watching for incremental re-index
+notify      = "6"
+
+# Fast channel between crawler and extractor
+crossbeam-channel = "0.5"
+
+# Fast non-cryptographic hasher (much faster than std DefaultHasher)
+rustc-hash  = "1"
+
+dashmap     = "6"
+
+# Error handling
+anyhow      = "1"
+
+# Byte-order aware binary I/O for the index format
+byteorder   = "1"
+
+[profile.release]
+opt-level   = 3
+lto         = "fat"       # Link-time optimization across all crates
+codegen-units = 1         # Single codegen unit = better inlining
+panic       = "abort"     # No unwinding overhead
+strip       = true        # Strip debug symbols from binary
