@@ -24,6 +24,20 @@ cargo build --release
 
 Binary: `target/release/cix` (or `cix.exe` on Windows).
 
+### Windows (PowerShell)
+
+After `cargo build --release`, run the binary **from the repo root** with a **backslash** before `target`:
+
+```powershell
+.\target\release\cix.exe index "C:\path\to\project"
+.\target\release\cix.exe search "query" --index "C:\path\to\project\.cix-index"
+```
+
+- **`.\cix.exe`** only works if `cix.exe` is actually in the current folder (it is not copied there by `cargo build`).
+- **`.target\...`** (dot only) is wrong — PowerShell treats that like a module name. Use **`.\target\...`** (backslash-dot).
+
+If you indexed VS Code at `C:\...\vscode`, the default index is **`C:\...\vscode\.cix-index`**. From another folder (e.g. this repo), you **must** pass `--index` to that path, or `search` looks for `.cix-index` in the current directory and will miss your index.
+
 ## Usage
 
 Index a directory (writes `.cix-index` in that directory by default):

@@ -1,0 +1,18 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Local index artifacts (when developing in-repo)
+.cix-index
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
