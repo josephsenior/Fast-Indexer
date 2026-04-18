@@ -120,13 +120,14 @@ Enable **Actions** in the repo settings if CI workflows do not run automatically
 
 Inline video preview (plays on GitHub when file is in the repository):
 
+
 <video controls width="720">
-	<source src="demo/sans-titre.mp4" type="video/mp4">
-	Your browser does not support the video tag.
+  <source src="https://raw.githubusercontent.com/josephsenior/Fast-Indexer/main/demo/sans-titre.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
-Thumbnail links (smaller README footprint):
+Fallback link (direct download / play):
 
-[![Demo recording](demo/screen-recording-thumb.png)](demo/screen-recording-2026-04-18-184705.mp4)
+[Watch full screen recording](https://github.com/josephsenior/Fast-Indexer/raw/main/demo/screen-recording-2026-04-18-184705.mp4)
 
 If your videos are large, consider using Git LFS (already enabled for `demo/*.mp4`) or hosting on YouTube/Vimeo and linking from the README.
