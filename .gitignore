@@ -1,5 +1,6 @@
 # Rust
 /target/
+/tools/
 **/*.rs.bk
 
 # Local index artifacts (when developing in-repo)
