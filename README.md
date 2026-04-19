@@ -70,10 +70,10 @@ cix watch /path/to/project
 
 ## Ignore rules
 
-| Mechanism | Role |
-|-----------|------|
-| **`.gitignore`** | Applied automatically in each directory (and parents), like ripgrep |
-| **`.ignore`** | Extra ignore patterns (see `ignore` crate / ripgrep behavior) |
+| Mechanism        | Role                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| **`.gitignore`** | Applied automatically in each directory (and parents), like ripgrep                                 |
+| **`.ignore`**    | Extra ignore patterns (see `ignore` crate / ripgrep behavior)                                       |
 | **`.cixignore`** | Optional **additional** excludes (same syntax). Use for assets, vendored trees, or paths not in git |
 
 Large trees (e.g. Linux kernel, monorepos) can take **minutes** on first index; use `.cixignore` to skip heavy dirs if needed.
@@ -86,10 +86,10 @@ Large trees (e.g. Linux kernel, monorepos) can take **minutes** on first index; 
 
 ## How it compares
 
-| Tool | Role |
-|------|------|
-| **ripgrep** | Line-oriented search; scans files (very fast, no persistent index) |
-| **cix** | **Persistent trigram index** for repeated searches over the same tree |
+| Tool        | Role                                                                  |
+| ----------- | --------------------------------------------------------------------- |
+| **ripgrep** | Line-oriented search; scans files (very fast, no persistent index)    |
+| **cix**     | **Persistent trigram index** for repeated searches over the same tree |
 
 Use cix when you want **many searches** against a **fixed** codebase without rescanning disk every time.
 
@@ -119,7 +119,6 @@ Enable **Actions** in the repo settings if CI workflows do not run automatically
 ## Demos
 
 Inline video preview (plays on GitHub when file is in the repository):
-
 
 Thumbnail previews (click to play):
 
