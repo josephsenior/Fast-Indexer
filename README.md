@@ -1,5 +1,11 @@
 # Fast-Indexer (cix) — Blazing Fast trigram-based code indexer
 
+[![CI](https://github.com/josephsenior/Fast-Indexer/actions/workflows/ci.yml/badge.svg)](https://github.com/josephsenior/Fast-Indexer/actions)
+[![Release](https://img.shields.io/github/v/release/josephsenior/Fast-Indexer.svg)](https://github.com/josephsenior/Fast-Indexer/releases)
+[![Crates.io](https://img.shields.io/crates/v/cix.svg)](https://crates.io/crates/cix)
+[![Docs.rs](https://docs.rs/cix/badge.svg)](https://docs.rs/cix)
+[![License](https://img.shields.io/github/license/josephsenior/Fast-Indexer.svg)](LICENSE)
+
 Fast-Indexer is a Rust-based, trigram-driven incremental indexer and searcher for local codebases. Build an on-disk index once, then run sub-millisecond substring queries over file paths using memory-mapped Roaring bitmaps ([Roaring](https://github.com/RoaringBitmap/roaring-rs)).
 
 ## Features

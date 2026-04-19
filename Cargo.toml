@@ -5,6 +5,9 @@ edition = "2021"
 description = "Fast-Indexer — Rust trigram-based incremental indexer for sub-millisecond substring search in codebases"
 readme = "README.md"
 license = "MIT"
+repository = "https://github.com/josephsenior/Fast-Indexer"
+homepage = "https://github.com/josephsenior/Fast-Indexer"
+documentation = "https://docs.rs/cix"
 keywords = ["search", "cli", "index", "trigram", "codebase"]
 categories = ["command-line-utilities"]
 

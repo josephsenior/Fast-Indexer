@@ -1,0 +1,20 @@
+name: Set repository description and topics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  set-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set repository description and topics
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const description = "Blazing-fast trigram-based code indexer for sub-millisecond substring search in codebases";
+            await github.rest.repos.update({ owner, repo, description });
+            const topics = ["rust", "indexer", "trigram", "search", "cli", "code-search"];
+            await github.rest.repos.replaceAllTopics({ owner, repo, names: topics });
+            console.log(`Updated ${owner}/${repo} description and topics.`);
