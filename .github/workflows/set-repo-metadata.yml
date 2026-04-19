@@ -1,11 +1,10 @@
 name: Set repository description and topics
 
-permissions:
-  contents: write
-  metadata: write
-
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   set-metadata:
