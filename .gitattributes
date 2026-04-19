@@ -1,1 +1,13 @@
 demo/*.mp4 filter=lfs diff=lfs merge=lfs -text
+# Treat demo binaries as vendored so they don't skew language statistics
+/demo/** linguist-vendored=true
+/demo/** linguist-generated=false
+/demo/** linguist-language=Text
+/tools/** linguist-vendored=true
+/tools/** linguist-generated=false
+/tools/** linguist-language=Text
+
+# Ensure common code files have correct language
+*.rs linguist-language=Rust
+*.md linguist-language=Markdown
+*.toml linguist-language=Toml
